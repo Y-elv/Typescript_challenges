@@ -1,6 +1,7 @@
 //Prime
-const arrNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-const filterPrime = (arrNumbers: number[]) => {
+const arrNumbers: number[] = [356, 701, 39, 46, 133];
+
+const filterPrime = (arrNumbers: number[]): number[] => {
   const primeNumbers: number[] = [];
   for (let index = 0; index < arrNumbers.length; index++) {
     const currNumber: number = arrNumbers[index];
@@ -23,10 +24,10 @@ const filterPrime = (arrNumbers: number[]) => {
   return primeNumbers;
 };
 
-console.log(filterPrime(arrNumbers))
+// console.log(filterPrime(arrNumbers))
 
 // 2. Palindrome
-function isPalindrome(txt: string) {
+function isPalindrome(txt: string): string {
   txt = txt.toLowerCase().replace(/[^a-z0-9]/g, "");
   const isTxtPalindrome = txt == txt.split("").reverse().join("");
   return isTxtPalindrome
@@ -35,24 +36,27 @@ function isPalindrome(txt: string) {
 }
 
 // console.log(isPalindrome("level"))
-// console.log(isPalindrome("madam"))
-// console.log(isPalindrome("Elvis"))
+// console.log(isPalindrome("radar"))
+// console.log(isPalindrome("hello"))
+// console.log(isPalindrome("apple"));
+// console.log(isPalindrome("Was it a car or a cat I saw?"));
 
 // 3. Array Reversed
+
 interface Arr extends Array<string | number> {}
-function reverseArray(arr: Arr) {
+function reverseArray(arr: Arr): Arr {
   let reverseArray: Arr = [];
   for (let i = arr.length - 1; i >= 0; i--) {
     reverseArray.push(arr[i]);
   }
   return reverseArray;
 }
-// console.log(reverseArray( [1,2,3,'a']))
+// console.log(reverseArray([1, 2, 3, 5 ]));
 
 //4. Reverse inplace Array
 type ArrElement = string | number;
 
-function reverseInplaceArray(arr: Arr) {
+function reverseInplaceArray(arr: Arr) :Arr {
   for (let i = 0; i < Math.floor(arr.length / 2); i++) {
     let temp: ArrElement = arr[i];
     arr[i] = arr[arr.length - i - 1];
@@ -60,7 +64,9 @@ function reverseInplaceArray(arr: Arr) {
   }
   return arr;
 }
-// console.log(reverseInplaceArray([1,2,3,'a']))
+// console.log(reverseInplaceArray([1,2,3,5]))
+
+
 
 //5. Formated Object
 type PersonInfo = { "second-name": string; age: number };
@@ -169,6 +175,7 @@ const setStudentAgeApi = (student: student, age: number) => {
 // }).catch(err => console.log(err))
 
 // 9. AsynchJS
+
 interface familyObject {
   fatherName: string;
   MotherName: string;
@@ -200,17 +207,17 @@ let families = [
     childrenNumber: 6,
   },
   {
-    fatherName: "Yves",
+    fatherName: "Yvess",
     MotherName: "Rachel",
     childrenNumber: 2,
   },
 ];
 
 (async () => {
-  console.log("showing Family DATA...");
+  // console.log("showing Family DATA...");
   try {
     const family = await setFamilyApi(families);
-    console.log(family);
+    // console.log(family);
   } catch (error) {
     console.error(error);
   }
